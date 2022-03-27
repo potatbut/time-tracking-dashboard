@@ -11,7 +11,7 @@
 <h3 align="center">Preview</h3>
 <p align="center"><img width="400px" src="design/active-states.jpg"></p>
 <br>
-<h3 align="center">Work with</h3>
+<h3 align="center">Build with</h3>
 <p align="center">
 <img src="https://www.svgrepo.com/show/353884/html-5.svg" width="50" height="50">
 <img src="https://www.svgrepo.com/show/374061/sass.svg" width="50" height="50">
