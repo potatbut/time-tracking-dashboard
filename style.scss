@@ -13,6 +13,7 @@ $Soft-orange: #f1c65b;
 
 $Font-family: 'Rubik', sans-serif;
 $Font-size: 18px;
+$Transition: 500ms;
 
 @mixin general-background-color {
   background-color: $Dark-blue;
@@ -62,6 +63,7 @@ main {
     grid-template-columns: repeat(4, auto);
     column-gap: 3%;
     row-gap: 5%;
+    max-width: 1300px;
   }
 
   .profile {
@@ -82,29 +84,66 @@ main {
 
   .info {
     @include general-border-radius;
+    max-width: 260px;
+    /* NOTE: to mixins and var !!! */
     &.work {
       background-color: $Light-orange;
+      background-image: url(images/icon-work.svg);
+      background-repeat: no-repeat;
+      background-position: 90% -5px;
     }
     &.play {
       background-color: $Soft-blue;
+      background-image: url(images/icon-play.svg);
+      background-repeat: no-repeat;
+      background-position: 90% -5px;
     }
     &.study {
       background-color: $Light-red;
+      background-image: url(images/icon-study.svg);
+      background-repeat: no-repeat;
+      background-position: 90% -5px;
     }
     &.exercise {
-      background-color: $Light-red;
+      background-color: $Lime-green;
+      background-image: url(images/icon-exercise.svg);
+      background-repeat: no-repeat;
+      background-position: 90% -5px;
     }
     &.social {
       background-color: $Violet;
+      background-image: url(images/icon-social.svg);
+      background-repeat: no-repeat;
+      background-position: 90% -5px;
     }
     &.self-care {
       background-color: $Soft-orange;
+      background-image: url(images/icon-self-care.svg);
+      background-repeat: no-repeat;
+      background-position: 90% -5px;
     }
     &__wrapper {
       @include general-background-color;
       @include general-border-radius;
-      margin-top: 40px;
-      padding: 40px;
+      margin-top: 45px;
+      padding: 30px 35px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__button {
+      cursor: pointer;
+      &:hover {
+        filter: brightness(1.4);
+        transition: $Transition;
+      }
+    }
+    &__amount {
+      font-size: 50px;
+      line-height: 2;
+    }
+    &__note {
+      font-size: 16px;
     }
   }
 }
