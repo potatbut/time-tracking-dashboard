@@ -22,6 +22,13 @@ $Transition: 500ms;
   border-radius: 15px;
 }
 
+@mixin info-card($background-color, $background-url) {
+  background-color: $background-color;
+  background-image: url($background-url);
+  background-repeat: no-repeat;
+  background-position: 90% -5px;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -85,42 +92,24 @@ main {
   .info {
     @include general-border-radius;
     max-width: 260px;
-    /* NOTE: to mixins and var !!! */
+    // FUNCTION
     &.work {
-      background-color: $Light-orange;
-      background-image: url(images/icon-work.svg);
-      background-repeat: no-repeat;
-      background-position: 90% -5px;
+      @include info-card($Light-orange, 'images/icon-work.svg')
     }
     &.play {
-      background-color: $Soft-blue;
-      background-image: url(images/icon-play.svg);
-      background-repeat: no-repeat;
-      background-position: 90% -5px;
+      @include info-card($Soft-blue, 'images/icon-play.svg')
     }
     &.study {
-      background-color: $Light-red;
-      background-image: url(images/icon-study.svg);
-      background-repeat: no-repeat;
-      background-position: 90% -5px;
+      @include info-card($Light-red, 'images/icon-study.svg')
     }
     &.exercise {
-      background-color: $Lime-green;
-      background-image: url(images/icon-exercise.svg);
-      background-repeat: no-repeat;
-      background-position: 90% -5px;
+      @include info-card($Lime-green, 'images/icon-exercise.svg')
     }
     &.social {
-      background-color: $Violet;
-      background-image: url(images/icon-social.svg);
-      background-repeat: no-repeat;
-      background-position: 90% -5px;
+      @include info-card($Violet, 'images/icon-social.svg')
     }
     &.self-care {
-      background-color: $Soft-orange;
-      background-image: url(images/icon-self-care.svg);
-      background-repeat: no-repeat;
-      background-position: 90% -5px;
+      @include info-card($Soft-orange, 'images/icon-self-care.svg')
     }
     &__wrapper {
       @include general-background-color;
