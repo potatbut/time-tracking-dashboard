@@ -1,3 +1,10 @@
+#off-transition * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -16,7 +23,7 @@ h1, button {
 }
 
 .attribution {
-  color: white;
+  color: hsl(0deg, 0%, 100%);
   font-size: 11px;
   text-align: center;
   width: 100%;
@@ -34,11 +41,14 @@ main {
   align-items: center;
   height: 90vh;
 }
+main .wrapper {
+  max-width: 1110px;
+}
 main .dashboard {
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  -moz-column-gap: 3%;
-       column-gap: 3%;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 2.5%;
+       column-gap: 2.5%;
   row-gap: 5%;
   max-width: 1300px;
 }
@@ -47,71 +57,108 @@ main .profile {
   background-color: #1c1f4a;
   border-radius: 15px;
 }
+main .profile__wrapper {
+  background-color: #5847eb;
+  padding: 40px 30px 70px;
+  border-radius: 20px;
+}
 main .profile__photo {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border: 2px solid #fff;
   border-radius: 50px;
+  margin-bottom: 40px;
 }
 main .profile__photo img {
   width: 100%;
 }
+main .profile__label {
+  opacity: 0.8;
+  font-size: 14px;
+}
+main .profile__name {
+  font-weight: 300;
+}
+main .profile__navigation {
+  display: flex;
+  height: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 30px 0 0 40px;
+}
+main .profile__button {
+  flex-basis: 100%;
+  padding: 10px 0;
+  color: #bdc1ff;
+  text-align: left;
+  font-size: 18px;
+  cursor: pointer;
+}
+main .profile__button:hover {
+  color: #ffffff;
+}
 main .info {
   border-radius: 15px;
-  max-width: 260px;
-  /* NOTE: to mixins and var !!! */
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  cursor: pointer;
 }
 main .info.work {
   background-color: #ff8c66;
-  background-image: url(images/icon-work.svg);
+  background-image: url("images/icon-work.svg");
   background-repeat: no-repeat;
   background-position: 90% -5px;
 }
 main .info.play {
   background-color: #56c2e6;
-  background-image: url(images/icon-play.svg);
+  background-image: url("images/icon-play.svg");
   background-repeat: no-repeat;
   background-position: 90% -5px;
 }
 main .info.study {
   background-color: #ff5c7c;
-  background-image: url(images/icon-study.svg);
+  background-image: url("images/icon-study.svg");
   background-repeat: no-repeat;
   background-position: 90% -5px;
 }
 main .info.exercise {
   background-color: #4acf81;
-  background-image: url(images/icon-exercise.svg);
+  background-image: url("images/icon-exercise.svg");
   background-repeat: no-repeat;
   background-position: 90% -5px;
 }
 main .info.social {
   background-color: #7536d3;
-  background-image: url(images/icon-social.svg);
+  background-image: url("images/icon-social.svg");
   background-repeat: no-repeat;
   background-position: 90% -5px;
 }
 main .info.self-care {
   background-color: #f1c65b;
-  background-image: url(images/icon-self-care.svg);
+  background-image: url("images/icon-self-care.svg");
   background-repeat: no-repeat;
   background-position: 90% -5px;
 }
 main .info__wrapper {
   background-color: #1c1f4a;
   border-radius: 15px;
+  transition: all 500ms ease-out;
   margin-top: 45px;
   padding: 30px 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+main .info__wrapper:hover {
+  filter: brightness(1.2);
+}
 main .info__button {
   cursor: pointer;
+  transition: all 500ms ease-out;
 }
 main .info__button:hover {
-  filter: brightness(1.4);
-  transition: 500ms;
+  filter: brightness(1.6);
+  transition: all 500ms ease-out;
 }
 main .info__amount {
   font-size: 50px;
@@ -119,4 +166,5 @@ main .info__amount {
 }
 main .info__note {
   font-size: 16px;
+  color: #bdc1ff;
 }/*# sourceMappingURL=style.css.map */
