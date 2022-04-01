@@ -68,6 +68,10 @@ main .profile__photo {
   border: 2px solid #fff;
   border-radius: 50px;
   margin-bottom: 40px;
+  transition: 500ms;
+}
+main .profile__photo:hover {
+  transform: scale(1.2);
 }
 main .profile__photo img {
   width: 100%;
@@ -142,23 +146,26 @@ main .info.self-care {
 main .info__wrapper {
   background-color: #1c1f4a;
   border-radius: 15px;
-  transition: all 500ms ease-out;
+  transition: 500ms;
   margin-top: 45px;
   padding: 30px 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+main .info__wrapper.buttonActive:hover {
+  filter: brightness(1);
+}
 main .info__wrapper:hover {
   filter: brightness(1.2);
 }
 main .info__button {
   cursor: pointer;
-  transition: all 500ms ease-out;
+  transition: 500ms;
 }
 main .info__button:hover {
   filter: brightness(1.6);
-  transition: all 500ms ease-out;
+  transition: 500ms;
 }
 main .info__amount {
   font-size: 50px;

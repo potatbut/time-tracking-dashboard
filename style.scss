@@ -13,7 +13,7 @@ $Soft-orange: #f1c65b;
 
 $Font-family: 'Rubik', sans-serif;
 $Font-size: 18px;
-$Transition: all 500ms ease-out;
+$Transition: 500ms;
 
 $cards: 'work', 'play', 'study', 'exercise', 'social', 'self-care';
 
@@ -103,6 +103,10 @@ main {
       border: 2px solid #fff;
       border-radius: 50px;
       margin-bottom: 40px;
+      transition: $Transition;
+      &:hover {
+        transform: scale(1.2);
+      }
       img {
         width: 100%
       }
@@ -144,7 +148,6 @@ main {
     border-bottom-right-radius: 50px;
     cursor: pointer;
 
-    // FUNCTION
     &.work {
       @include info-card($Light-orange, 'images/icon-work.svg')
     }
@@ -172,6 +175,9 @@ main {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      &.buttonActive:hover {
+        filter: brightness(1);
+      }
       &:hover {
         filter: brightness(1.2);
       }
