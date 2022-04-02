@@ -1,4 +1,5 @@
 <h3 align="center">WORK IN PROGRESS</h3>
+<p align="center"><a href="https://potatbut.github.io/time-tracking-dashboard/"> 🔸 DEMO 🔸 </a></p>
 <br>
 <p align="center"><img src="https://media3.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif"></p>
 
