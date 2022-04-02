@@ -126,7 +126,7 @@ main {
       height: auto;
       flex-wrap: wrap;
       align-items: center;
-      padding: 30px 0 0 40px;
+      padding: 30px 0 25px;
     }
 
     &__button {
@@ -135,8 +135,9 @@ main {
       color: $Pale-blue;
       text-align: left;
       font-size: 18px;
+      padding-left: 35px;
       cursor: pointer;
-      &:hover {
+      &:hover, &.button-active {
         color: #ffffff;
       }
     }
@@ -147,6 +148,7 @@ main {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     cursor: pointer;
+
 
     &.work {
       @include info-card($Light-orange, 'images/icon-work.svg')
@@ -175,8 +177,14 @@ main {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      
+
       &.buttonActive:hover {
         filter: brightness(1);
+        img {
+          background-color: rgb(255, 255, 255, 0.1);
+          box-shadow: 0px 0px 20px 0px rgb(255, 255, 255, 0.5);
+        }
       }
       &:hover {
         filter: brightness(1.2);
@@ -185,6 +193,10 @@ main {
     &__button {
       cursor: pointer;
       transition: $Transition;
+      img {
+        width: 100%;
+        transition: $Transition;
+      }
       &:hover {
         filter: brightness(1.6);
         transition: $Transition;
@@ -193,6 +205,13 @@ main {
     &__amount {
       font-size: 50px;
       line-height: 2;
+      flex-basis: 100%;
+      opacity: 1;
+      transition: $Transition;
+      
+      &.opacity {
+        opacity: 0;
+      }
     }
     &__note {
       font-size: 16px;
