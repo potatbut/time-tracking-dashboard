@@ -1,8 +1,11 @@
 #off-transition * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
+  transition: none !important;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
 }
 
 body {
@@ -15,7 +18,8 @@ body {
   background-color: #0f1424;
 }
 
-h1, button {
+h1,
+button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -24,43 +28,74 @@ h1, button {
 
 .attribution {
   color: hsl(0deg, 0%, 100%);
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
+  position: fixed;
+  top: 40%;
+  left: calc(-100% + 17px);
   width: 100%;
   padding: 0 0 10px;
-  position: absolute;
-  bottom: 0;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
 }
 .attribution a {
-  color: #a33e79;
+  color: #e4b2cf;
 }
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  min-height: 90vh;
+}
+@media (max-width: 580px) {
+  main {
+    display: block;
+  }
 }
 main .wrapper {
   max-width: 1110px;
+  padding: 10px 20px;
 }
 main .dashboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  -moz-column-gap: 2.5%;
-       column-gap: 2.5%;
-  row-gap: 5%;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  row-gap: 25px;
   max-width: 1300px;
+}
+@media (max-width: 991px) {
+  main .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 580px) {
+  main .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 }
 main .profile {
   grid-row: 1/3;
   background-color: #1c1f4a;
   border-radius: 15px;
 }
+@media (max-width: 580px) {
+  main .profile {
+    margin-bottom: 20px;
+  }
+}
 main .profile__wrapper {
   background-color: #5847eb;
   padding: 40px 30px 70px;
   border-radius: 20px;
+}
+@media (max-width: 580px) {
+  main .profile__wrapper {
+    padding: 40px 20px;
+  }
 }
 main .profile__photo {
   width: 80px;
@@ -76,6 +111,14 @@ main .profile__photo:hover {
 main .profile__photo img {
   width: 100%;
 }
+@media (max-width: 580px) {
+  main .profile__photo {
+    width: 65px;
+    height: 65px;
+    margin: -10px 20px 0 10px;
+    float: left;
+  }
+}
 main .profile__label {
   opacity: 0.8;
   font-size: 14px;
@@ -83,12 +126,24 @@ main .profile__label {
 main .profile__name {
   font-weight: 300;
 }
+@media (max-width: 580px) {
+  main .profile__name {
+    font-size: 24px;
+  }
+}
 main .profile__navigation {
   display: flex;
   height: auto;
   flex-wrap: wrap;
   align-items: center;
   padding: 30px 0 25px;
+}
+@media (max-width: 580px) {
+  main .profile__navigation {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px 0 10px;
+  }
 }
 main .profile__button {
   flex-basis: 100%;
@@ -102,11 +157,18 @@ main .profile__button {
 main .profile__button:hover, main .profile__button.button-active {
   color: #ffffff;
 }
+@media (max-width: 580px) {
+  main .profile__button {
+    text-align: center;
+    padding-left: 0;
+  }
+}
 main .info {
   border-radius: 15px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
   cursor: pointer;
+  transition: 500ms;
 }
 main .info.work {
   background-color: #ff8c66;
@@ -144,6 +206,11 @@ main .info.self-care {
   background-repeat: no-repeat;
   background-position: 90% -5px;
 }
+@media (max-width: 580px) {
+  main .info {
+    margin-bottom: 25px;
+  }
+}
 main .info__wrapper {
   background-color: #1c1f4a;
   border-radius: 15px;
@@ -163,6 +230,15 @@ main .info__wrapper.buttonActive:hover img {
 }
 main .info__wrapper:hover {
   filter: brightness(1.2);
+}
+@media (max-width: 580px) {
+  main .info__wrapper {
+    align-items: center;
+    padding: 20px;
+  }
+}
+main .info__label {
+  flex-basis: 50%;
 }
 main .info__button {
   cursor: pointer;
@@ -186,7 +262,20 @@ main .info__amount {
 main .info__amount.opacity {
   opacity: 0;
 }
+@media (max-width: 580px) {
+  main .info__amount {
+    font-size: 30px;
+    flex-basis: 50%;
+  }
+}
 main .info__note {
   font-size: 16px;
   color: #bdc1ff;
+}
+@media (max-width: 580px) {
+  main .info__note {
+    font-size: 14px;
+    flex-basis: 50%;
+    text-align: right;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -11,11 +11,11 @@ $Lime-green: #4acf81;
 $Violet: #7536d3;
 $Soft-orange: #f1c65b;
 
-$Font-family: 'Rubik', sans-serif;
+$Font-family: "Rubik", sans-serif;
 $Font-size: 18px;
 $Transition: 500ms;
 
-$cards: 'work', 'play', 'study', 'exercise', 'social', 'self-care';
+$cards: "work", "play", "study", "exercise", "social", "self-care";
 
 @mixin general-background-color {
   background-color: $Dark-blue;
@@ -36,6 +36,15 @@ $cards: 'work', 'play', 'study', 'exercise', 'social', 'self-care';
   -moz-transition: none !important;
   -ms-transition: none !important;
   -o-transition: none !important;
+  transition: none !important;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -48,23 +57,26 @@ body {
   background-color: $Very-dark;
 }
 
-h1, button {
+h1,
+button {
   margin: 0;
   padding: 0;
   border: 0;
   background-color: transparent;
 }
 
-.attribution { 
+.attribution {
   color: hsl(0, 0%, 100%);
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
+  position: fixed;
+  top: 40%;
+  left: calc(-100% + 17px);
   width: 100%;
   padding: 0 0 10px;
-  position: absolute;
-  bottom: 0;
-  a { 
-    color: #a33e79; 
+  writing-mode: vertical-rl;
+  a {
+    color: #e4b2cf;
   }
 }
 
@@ -72,18 +84,30 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  min-height: 90vh;
+  @media (max-width: 580px) {
+    display: block;
+  }
 
   .wrapper {
     max-width: 1110px;
+    padding: 10px 20px;
   }
 
   .dashboard {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 2.5%;
-    row-gap: 5%;
+    column-gap: 25px;
+    row-gap: 25px;
     max-width: 1300px;
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 580px) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   .profile {
@@ -91,10 +115,18 @@ main {
     @include general-background-color;
     @include general-border-radius;
 
+    @media (max-width: 580px) {
+      margin-bottom: 20px;
+    }
+
     &__wrapper {
       background-color: $Blue;
       padding: 40px 30px 70px;
       border-radius: 20px;
+
+      @media (max-width: 580px) {
+        padding: 40px 20px;
+      }
     }
 
     &__photo {
@@ -108,7 +140,14 @@ main {
         transform: scale(1.2);
       }
       img {
-        width: 100%
+        width: 100%;
+      }
+
+      @media (max-width: 580px) {
+        width: 65px;
+        height: 65px;
+        margin: -10px 20px 0 10px;
+        float: left;
       }
     }
 
@@ -119,6 +158,10 @@ main {
 
     &__name {
       font-weight: 300;
+
+      @media (max-width: 580px) {
+        font-size: 24px;
+      }
     }
 
     &__navigation {
@@ -127,6 +170,12 @@ main {
       flex-wrap: wrap;
       align-items: center;
       padding: 30px 0 25px;
+
+      @media (max-width: 580px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px 0 10px;
+      }
     }
 
     &__button {
@@ -137,36 +186,46 @@ main {
       font-size: 18px;
       padding-left: 35px;
       cursor: pointer;
-      &:hover, &.button-active {
+      &:hover,
+      &.button-active {
         color: #ffffff;
+      }
+      @media (max-width: 580px) {
+        text-align: center;
+        padding-left: 0;
       }
     }
   }
 
   .info {
     @include general-border-radius;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
     cursor: pointer;
 
+    transition: $Transition;
 
     &.work {
-      @include info-card($Light-orange, 'images/icon-work.svg')
+      @include info-card($Light-orange, "images/icon-work.svg");
     }
     &.play {
-      @include info-card($Soft-blue, 'images/icon-play.svg')
+      @include info-card($Soft-blue, "images/icon-play.svg");
     }
     &.study {
-      @include info-card($Light-red, 'images/icon-study.svg')
+      @include info-card($Light-red, "images/icon-study.svg");
     }
     &.exercise {
-      @include info-card($Lime-green, 'images/icon-exercise.svg')
+      @include info-card($Lime-green, "images/icon-exercise.svg");
     }
     &.social {
-      @include info-card($Violet, 'images/icon-social.svg')
+      @include info-card($Violet, "images/icon-social.svg");
     }
     &.self-care {
-      @include info-card($Soft-orange, 'images/icon-self-care.svg')
+      @include info-card($Soft-orange, "images/icon-self-care.svg");
+    }
+    
+    @media (max-width: 580px) {
+      margin-bottom: 25px;
     }
     &__wrapper {
       @include general-background-color;
@@ -177,7 +236,6 @@ main {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      
 
       &.buttonActive:hover {
         filter: brightness(1);
@@ -189,6 +247,13 @@ main {
       &:hover {
         filter: brightness(1.2);
       }
+      @media (max-width: 580px) {
+        align-items: center;
+        padding: 20px;
+      }
+    }
+    &__label {
+      flex-basis: 50%;
     }
     &__button {
       cursor: pointer;
@@ -208,17 +273,24 @@ main {
       flex-basis: 100%;
       opacity: 1;
       transition: $Transition;
-      
+
       &.opacity {
         opacity: 0;
+      }
+
+      @media (max-width: 580px) {
+        font-size: 30px;
+        flex-basis: 50%;
       }
     }
     &__note {
       font-size: 16px;
       color: $Pale-blue;
+      @media (max-width: 580px) {
+        font-size: 14px;
+        flex-basis: 50%;
+        text-align: right;
+      }
     }
   }
 }
-
-
-
