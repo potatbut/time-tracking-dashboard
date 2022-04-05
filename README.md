@@ -22,7 +22,7 @@
 - HTML
 - JavaScript
 - Scss
-- Usage: Grid, flex, json api, scss mixins
+- Using grid, flex, json api, and scss mixins
 <!-- <p align="left">
 <img src="https://www.svgrepo.com/show/353884/html-5.svg" width="50" height="50">
 <img src="https://www.svgrepo.com/show/374061/sass.svg" width="50" height="50">
