@@ -17,7 +17,7 @@
 - <a href= "https://github.com/potatbut">MY PROFILE</a>
 
 <br>
-<h2 align="left">⭐ Build with</h2>
+<h2 align="left">⭐ Built with</h2>
 
 - HTML
 - JavaScript
